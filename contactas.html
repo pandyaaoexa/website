@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us with Upward Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #004d40, #00796b, #004d40);
+      color: #fff;
+      position: relative;
+    }
+
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .contact-form-container {
+      position: relative;
+      z-index: 10;
+      background-color: #d1f2e8;
+      border-radius: 12px;
+      padding: 40px;
+      width: 450px;
+      box-shadow: 0 10px 30px rgba(29, 191, 115, 0.5);
+      transition: all 0.3s ease;
+      color: #054d37;
+    }
+
+    .contact-form-container:hover {
+      box-shadow: 0 15px 45px rgba(29, 191, 115, 0.8);
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #116452;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    label {
+      font-size: 1.1em;
+      color: #054d37;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #116452;
+      border-radius: 8px;
+      font-size: 1.1em;
+      color: #054d37;
+      background-color: #e6faf2;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #0b3d2e;
+      background-color: #c1f1d6;
+      outline: none;
+      box-shadow: 0 0 8px rgba(29, 191, 115, 0.7);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form-container button {
+      width: 100%;
+      padding: 15px;
+      background-color: #0b3d2e;
+      color: #d1f2e8;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .contact-form-container button:hover {
+      background-color: #116452;
+      transform: translateY(-3px);
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1em;
+      color: #054d37;
+    }
+
+    .form-footer a {
+      color: #116452;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .form-footer a:hover {
+      color: #0b3d2e;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .contact-form-container {
+        width: 90%;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="background"></canvas>
+
+<div class="contact-form-container">
+  <h1>Contact Us</h1>
+  <form id="contactForm">
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name" required />
+
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email" required />
+
+    <label for="message">Your Message:</label>
+    <textarea name="message" id="message" placeholder="Write your message..." rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="form-footer">
+    <p>Have questions? <a href="#">Visit our FAQ</a></p>
+  </div>
+</div>
+
+<script>
+  // Background animation
+  const canvas = document.getElementById('background');
+  const ctx = canvas.getContext('2d');
+  let width, height;
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * width;
+      this.y = height + Math.random() * 100;
+      this.size = Math.random() * 3 + 1;
+      this.speed = 0.5 + Math.random() * 1.5;
+      this.opacity = Math.random() * 0.5 + 0.3;
+      this.color = `rgba(29, 191, 115, ${this.opacity})`;
+    }
+    update() {
+      this.y -= this.speed;
+      if (this.y < -this.size) {
+        this.reset();
+      }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = this.color;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 6;
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const particlesCount = 120;
+  const particles = [];
+  for (let i = 0; i < particlesCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(0, 77, 64, 0.3)';
+    ctx.fillRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Form submit handler
+  const form = document.getElementById('contactForm');
+  const formContainer = document.querySelector('.contact-form-container');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent page reload
+
+    form.reset(); // optional: clear form fields
+
+    const successMessage = document.createElement('div');
+    successMessage.innerHTML = "<p style='font-size:1.2em;color:#0b3d2e;text-align:center;margin-top:20px;'>✅ Thank you for your message! We’ll get back to you soon.</p>";
+    formContainer.appendChild(successMessage);
+
+    // Auto-hide message after 5 seconds
+    setTimeout(() => {
+      successMessage.remove();
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>
