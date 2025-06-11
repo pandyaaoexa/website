@@ -1,0 +1,170 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC Exam Stages</title>
+    
+
+    <!-- CSS for Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a777e;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #dae1eb9f;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .exam-stage {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+
+            
+        }
+      
+        .exam-stage h2 {
+            color: #444;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .exam-stage button {
+            background-color: #4c7177;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .exam-stage button:hover {
+            background-color: #0eac28;
+        }
+        header {
+      background-color: #4bb4b883;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 1px;
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+         UPSC Civil Services Examination Stages
+  </header>
+        
+    </style>
+</head>
+<body>
+
+    <!-- Container for UPSC exam stages -->
+    <div class="container">
+
+        <!-- UPSC Prelims -->
+        <div class="exam-stage">
+            <h2>1. UPSC Prelims Exam</h2>
+            <button onclick="toggleDetails('prelims-details')">Toggle Details</button>
+            <div id="prelims-details" class="details">
+                <p><strong>Purpose:</strong> To screen candidates for the Mains exam.</p>
+                <p><strong>Format:</strong></p>
+                <ul>
+                    <li>General Studies Paper I (200 marks)</li>
+                    <li>CSAT Paper II (200 marks, qualifying)</li>
+                </ul>
+                <p><strong>Duration:</strong> Each paper is 2 hours.</p>
+                <p><strong>Marking:</strong> Negative marking for wrong answers in Paper I.</p>
+                <p><strong>Key Focus:</strong> Current affairs, general knowledge, and aptitude.</p>&nbsp;
+                <nav>
+                    👉 View More :-
+                    <a href= "preliminary.html">preliminary</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- UPSC Mains -->
+        <div class="exam-stage">
+            <h2>2. UPSC Mains Exam</h2>
+            <button onclick="toggleDetails('mains-details')">Toggle Details</button>
+            <div id="mains-details" class="details">
+                <p><strong>Purpose:</strong> To test the candidate’s in-depth knowledge in various subjects.</p>
+                <p><strong>Format:</strong></p>
+                <ul>
+                    <li>Qualifying Papers (Indian Language & English)</li>
+                    <li>Essays and General Studies (4 papers)</li>
+                    <li>Optional Subject Papers (2 papers)</li>
+                </ul>
+                <p><strong>Total Marks:</strong> 1750 marks (for General Studies and Optional papers).</p>
+                <p><strong>Key Focus:</strong> Descriptive writing, analytical skills, and subject knowledge.</p>&nbsp;
+                <nav>
+                    👉 View More :-
+                    <a href= "mains.html">Mains </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- UPSC Interview -->
+        <div class="exam-stage">
+            <h2>3. UPSC Interview</h2>
+            <button onclick="toggleDetails('interview-details')">Toggle Details</button>
+            <div id="interview-details" class="details">
+                <p><strong>Purpose:</strong> To assess personality, communication skills, and suitability for public service.</p>
+                <p><strong>Format:</strong> Viva-voce (interview).</p>
+                <p><strong>Marks:</strong> 275 marks.</p>
+                <p><strong>Key Focus:</strong> Confidence, decision-making, and general awareness.</p>
+                <nav>
+                    👉 View More :-
+                    <a href= "Interview.html">interview</a>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for toggling details -->
+    <script>
+        // Function to toggle visibility of exam details
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+

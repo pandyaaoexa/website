@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Success</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    }
+
+    .success-box {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      }
+      to {
+        box-shadow: 0 0 30px #00fff7, 0 0 60px #00fff7;
+      }
+    }
+
+    .checkmark {
+      font-size: 60px;
+      color: #00fff7;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .home-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #00fff7;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: #00e6d3;
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-box">
+    <div class="checkmark">✔️</div>
+    <h1>Success!</h1>
+    <p>Your form has been submitted successfully.</p>
+    <a href="index.html" class="home-btn">Go to Home</a>
+  </div>
+
+</body>
+</html>

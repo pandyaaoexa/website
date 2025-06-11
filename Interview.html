@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPSC Interview Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3f51b5;
+      --light-bg: #f5f7fa;-
+      --text-dark: #333;
+      --text-muted: #666;
+      --card-bg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light-bg);
+      background-image: linear-gradient(135deg, #f5f7fa 25%, #e8ebf0 100%);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* Scroll progress bar */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: var(--primary);
+      z-index: 100;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: rgba(5, 185, 131, 0.507);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      z-index: 99;
+    }
+
+    nav .navbar {
+      max-width: 1000px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      background: var(--card-bg);
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .faq-toggle {
+      cursor: pointer;
+      background: #e8eaf6;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-top: 15px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .faq-toggle:hover {
+      background: #d1d9ff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out, padding 0.3s;
+      background: #ecf0e8;
+      margin-top: 10px;
+      border-left: 4px solid #66bb6a;
+      border-radius: 6px;
+      padding: 0 15px;
+    }
+
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #23bc61;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav .navbar {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div id="progressBar"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="navbar">
+      <div class="logo">UPSC Guide</div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header data-aos="fade-down">
+    <h1>UPSC Interview (Personality Test)</h1>
+    <p>Your final step to becoming a Civil Servant</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="section" data-aos="fade-up">
+      <h2>1. What is the UPSC Interview?</h2>
+      <p>The UPSC Interview is the final stage of the Civil Services Examination. It focuses on assessing your personality, maturity, and decision-making ability rather than academic knowledge.</p>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-delay="100">
+      <h2>2. Purpose of the Interview</h2>
+      <p>This test is designed to understand your character, leadership, ethics, presence of mind, and suitability for public service roles.</p>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-delay="200">
+      <h2>3. Marks and Weightage</h2>
+      <p>The Personality Test carries 275 marks. With Mains (1750 marks), the total is 2025. The interview can make a major difference in final rankings.</p>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-delay="300">
+      <h2>4. Common Interview Questions</h2>
+      <div class="faq-toggle" onclick="toggleFAQ('faq1')">➤ Click to view sample questions</div>
+      <div class="faq-answer" id="faq1">
+        <p>Expect questions from your DAF, educational background, hobbies, ethical case studies, governance, current issues, and your thoughts on national policies.</p>
+      </div>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-delay="400">
+      <h2>5. Tips from Toppers</h2>
+      <p>Be authentic, composed, and well-informed. Practice mock interviews, read newspapers, and understand every word in your DAF. Your attitude matters more than accuracy.</p>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-delay="500">
+      <h2>6. Dress Code</h2>
+      <p><strong>Men:</strong> Light shirt, formal trousers, shoes. Tie/blazer optional.<br>
+         <strong>Women:</strong> Saree, salwar suit, or formal western wear. Keep it neat, modest, and confident.</p>
+    </div>
+  </div>
+
+  <footer data-aos=>
+    🚀 Best Of Luck 🚀
+  </footer>
+
+  <!-- AOS & Scroll Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleFAQ(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle("open");
+    }
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    });
+  </script>
+
+</body>
+</html>

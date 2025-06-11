@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPSC Mains Exam Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fffd;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #1a73e8;
+    }
+
+    .section {
+      background: rgba(60, 76, 221, 0.486);
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .toggle-btn {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #71b2bb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <a href="center"></a>
+    📘 UPSC Mains Exam
+
+  </h1>
+
+  <div  class="section">
+    <h2>🔷 What is UPSC Mains?</h2>
+    <p>It is the second stage of the Civil Services Exam after clearing Prelims. It is a descriptive written exam with 9 papers.</p>
+  </div>
+
+  <div class="section">
+    <h2>🗂️ Structure of Mains Exam</h2>
+    <button class="toggle-btn" onclick="toggleContent('structure')">Toggle Structure</button>
+    <div class="content" id="structure">
+      <h3>🟡 Qualifying Papers</h3>
+      <table>
+        <tr><th>Paper</th><th>Subject</th><th>Marks</th></tr>
+        <tr><td>Paper A</td><td>Indian Language</td><td>300</td></tr>
+        <tr><td>Paper B</td><td>English</td><td>300</td></tr>
+      </table>
+      <p>✅ Minimum 75 marks (25%) required in each.</p>
+
+      <h3>🔵 Merit Papers</h3>
+      <table>
+        <tr><th>Paper</th><th>Subject</th><th>Marks</th></tr>
+        <tr><td>Paper I</td><td>Essay</td><td>250</td></tr>
+        <tr><td>Paper II</td><td>GS Paper I – History, Society, Geography</td><td>250</td></tr>
+        <tr><td>Paper III</td><td>GS Paper II – Polity, IR</td><td>250</td></tr>
+        <tr><td>Paper IV</td><td>GS Paper III – Economy, S&T, Environment</td><td>250</td></tr>
+        <tr><td>Paper V</td><td>GS Paper IV – Ethics</td><td>250</td></tr>
+        <tr><td>Paper VI</td><td>Optional Subject Paper 1</td><td>250</td></tr>
+        <tr><td>Paper VII</td><td>Optional Subject Paper 2</td><td>250</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 General Studies Topics</h2>
+    <button class="toggle-btn" onclick="toggleContent('gs')">Toggle GS Details</button>
+    <div class="content" id="gs">
+      <ul>
+        <li><strong>GS I:</strong> Indian History, Culture, Society, World History, Geography</li>
+        <li><strong>GS II:</strong> Constitution, Governance, IR, Schemes</li>
+        <li><strong>GS III:</strong> Economy, Science, Environment, Security</li>
+        <li><strong>GS IV:</strong> Ethics, Integrity, Case Studies</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ Essay & Optional Subjects</h2>
+    <p><strong>Essay:</strong> Two essays (125 marks each) on philosophical, social or political themes.</p>
+    <p><strong>Popular Optionals:</strong> History, Geography, PSIR, Sociology, Anthropology, Philosophy, Hindi/English Literature</p>
+  </div>
+
+  <div class="section">
+    <h2>⏳ Exam Timing</h2>
+    <ul>
+      <li>3 hours per paper</li>
+      <li>Word Limit: 150–250 words</li>
+      <li>Language: Hindi, English, or 8th Schedule languages</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📅 Exam Timeline</h2>
+    <p>Mains is held 3–4 months after Prelims, usually in <strong>September–October</strong>.</p>
+  </div>
+
+  <div class="section">
+    <h2>📖 Preparation Tips</h2>
+    <ul>
+      <li>Answer writing practice</li>
+      <li>Strong GS and optional notes</li>
+      <li>PYQs & topper copies</li>
+      <li>Time management</li>
+      <li>Regular mock tests</li>
+    </ul>
+    <p>✅ Use <strong>Introduction – Main Body – Conclusion</strong> format in answers.</p>
+  </div>
+
+  <div class="section">
+    <h2>🧩 Myths vs Facts</h2>
+    <ul>
+      <li><strong>Myth:</strong> Memorize everything. <strong>Fact:</strong> Clarity & presentation matter more.</li>
+      <li><strong>Myth:</strong> Optional must be from your degree. <strong>Fact:</strong> Choose what you understand well.</li>
+      <li><strong>Myth:</strong> Essay is easy. <strong>Fact:</strong> It is very scoring and crucial.</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === "none" ? "block" : "none";
+    }
+
+    // Show first by default
+    toggleContent('structure');
+    toggleContent('gs');
+  </script>
+
+</body>
+</html>
